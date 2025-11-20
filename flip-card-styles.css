@@ -1,0 +1,136 @@
+/* ----------------------------------- */
+/* Flip Card Animation Styles          */
+/* ----------------------------------- */
+
+/* Replace existing .pillar-card styles with these */
+
+.pillar-card {
+    background: rgba(30, 41, 59, 0.5);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.pillar-card:hover {
+    border-color: var(--primary-color);
+}
+
+.pillar-number {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.pillar-subtitle {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+}
+
+/* Flip Card Styles */
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px;
+    height: 400px;
+    cursor: pointer;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner,
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flip-card-front {
+    background: rgba(30, 41, 59, 0.5);
+}
+
+.flip-card-back {
+    background: rgba(30, 41, 59, 0.9);
+    transform: rotateY(180deg);
+    overflow-y: auto;
+    padding: 2rem 1.5rem;
+    justify-content: flex-start;
+}
+
+.flip-card-back .pillar-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+.flip-card-content {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.flip-card-content p {
+    margin-bottom: 0.75rem;
+    color: var(--text-color-muted);
+}
+
+.flip-card-content ul {
+    margin: 0.75rem 0 0 1.25rem;
+    padding: 0;
+}
+
+.flip-card-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text-color-muted);
+    font-size: 0.85rem;
+}
+
+.flip-hint {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    margin-top: auto;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Mobile: Click to flip instead of hover */
+@media (max-width: 768px) {
+    .flip-card:hover .flip-card-inner {
+        transform: none;
+    }
+
+    .flip-card.flipped .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card {
+        height: 350px;
+    }
+}
+
+/* JavaScript for mobile click handling */
+/*
+document.querySelectorAll('.flip-card').forEach(card => {
+    card.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+            this.classList.toggle('flipped');
+        }
+    });
+});
+*/
