@@ -83,14 +83,15 @@ a:hover {
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: sticky;
+
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .main-header.scrolled {
-    background-color: rgba(15, 23, 42, 0.99);
-    /* High opacity dark background */
+    background-color: var(--background-main);
+    /* Fully opaque dark background */
     backdrop-filter: blur(10px);
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -318,15 +319,6 @@ a:hover {
 }
 
 /* ----------------------------------- */
-/* 7. Footer                           */
-/* ----------------------------------- */
-
-footer {
-    border-top: 1px solid var(--border-color);
-    background-color: var(--background-main);
-}
-
-/* ----------------------------------- */
 /* 8. Pillars (New)                    */
 /* ----------------------------------- */
 
@@ -368,6 +360,52 @@ footer {
 .pillar-subtitle {
     font-size: 1rem;
     color: var(--text-color-muted);
+}
+
+/* ----------------------------------- */
+/* 7. Footer                           */
+/* ----------------------------------- */
+
+footer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-main);
+}
+
+.social-section {
+    margin-bottom: 2rem;
+}
+
+.social-cta {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color-main);
+    margin-bottom: 1.5rem;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-icon-link {
+    color: var(--text-color-muted);
+    transition: color 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon-link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.social-icon-link svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
 }
 
 /* ----------------------------------- */
