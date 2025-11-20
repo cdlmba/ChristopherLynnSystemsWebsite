@@ -83,7 +83,6 @@ a:hover {
     padding-top: 2rem;
     padding-bottom: 2rem;
     position: sticky;
-
     top: 0;
     z-index: 1000;
     transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
@@ -384,7 +383,9 @@ footer {
 
 .social-icons {
     display: flex;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
     gap: 1.5rem;
     margin-bottom: 2rem;
 }
@@ -392,7 +393,7 @@ footer {
 .social-icon-link {
     color: var(--text-color-muted);
     transition: color 0.2s, transform 0.2s;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
 }
