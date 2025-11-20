@@ -72,7 +72,6 @@ a:hover {
 
 .text-center {
     text-align: center;
-    align-items: center;
 }
 
 /* ----------------------------------- */
@@ -90,7 +89,7 @@ a:hover {
 }
 
 .main-header.scrolled {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(15, 23, 42, 0.99);
     /* High opacity dark background */
     backdrop-filter: blur(10px);
     padding-top: 1rem;
