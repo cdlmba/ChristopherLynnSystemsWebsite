@@ -148,12 +148,12 @@ a:hover {
 
 .hero-content-left {
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .hero-content-right {
     width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .hero-image {
@@ -176,11 +176,11 @@ a:hover {
     .hero-content-left {
         flex: 1;
         padding-right: 2rem;
+        justify-content: flex-start;
     }
 
     .hero-content-right {
         flex: 1;
-        justify-content: flex-end;
     }
 }
 
