@@ -157,8 +157,8 @@ a:hover {
 }
 
 .hero-image {
-    width: 50%;
-    max-width: 250px;
+    width: 100%;
+    max-width: 750px;
     border-radius: 0.5rem;
     box-shadow: var(--shadow-glow);
     border: 1px solid var(--border-color);
@@ -407,8 +407,78 @@ footer {
     fill: currentColor;
 }
 
+
 /* ----------------------------------- */
-/* 9. Mobile Optimization              */
+/* 9. Velocity Section                 */
+/* ----------------------------------- */
+
+.velocity-section {
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(30, 41, 59, 0.5) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.velocity-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 1rem;
+    color: var(--primary-color);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.velocity-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.3));
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+.velocity-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-color-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.velocity-subtitle {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    font-weight: 400;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .velocity-icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .velocity-title {
+        font-size: 2rem;
+    }
+
+    .velocity-subtitle {
+        font-size: 1.125rem;
+    }
+}
+
+/* ----------------------------------- */
+/* 10. Mobile Optimization              */
 /* ----------------------------------- */
 
 @media (max-width: 768px) {
