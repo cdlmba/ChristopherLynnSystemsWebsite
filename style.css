@@ -521,4 +521,68 @@ footer {
         text-align: left;
         margin-top: 1rem;
     }
+} 
+ /* ----------------------------------- */
+/* Services Table Styles               */
+/* ----------------------------------- */
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+.services-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+}
+
+.services-table th,
+.services-table td {
+    padding: 1rem;
+    text-align: left;
+    border: 1px solid var(--border-color);
+}
+
+.services-table th {
+    background-color: rgba(45, 212, 191, 0.1);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.services-table td {
+    color: var(--text-color-main);
+    vertical-align: top;
+}
+
+.services-table tbody tr:hover {
+    background-color: rgba(45, 212, 191, 0.05);
+}
+
+.services-table .text-muted {
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+}
+
+.services-table .table-link {
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.services-table .table-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .services-table th,
+    .services-table td {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
 }
