@@ -46,6 +46,11 @@ def index():
                          publishable_key=STRIPE_PUBLISHABLE_KEY,
                          price_id=STRIPE_PRICE_ID)
 
+@app.route('/<path:filename>')
+def serve_static(filename):
+    """Serve static files from the root directory"""
+    return send_from_directory('.', filename)
+
 
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
