@@ -5,6 +5,11 @@ from datetime import datetime, timedelta
 from flask import Flask, request, jsonify, render_template, redirect, url_for, session, send_from_directory
 from flask_cors import CORS
 import stripe
+import stripe.checkout
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('FLASK_SECRET_KEY', secrets.token_hex(32))
@@ -15,6 +20,14 @@ stripe.api_key = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
 STRIPE_PRICE_ID = os.environ.get('STRIPE_PRICE_ID')  # Your Stripe Price ID
 STRIPE_WEBHOOK_SECRET = os.environ.get('STRIPE_WEBHOOK_SECRET')
+
+# Debug: Print configuration status (remove in production)
+print("=" * 60)
+print("STRIPE CONFIGURATION STATUS:")
+print(f"Secret Key: {'✓ Loaded' if stripe.api_key else '✗ NOT FOUND'}")
+print(f"Publishable Key: {'✓ Loaded' if STRIPE_PUBLISHABLE_KEY else '✗ NOT FOUND'}")
+print(f"Price ID: {STRIPE_PRICE_ID if STRIPE_PRICE_ID else '✗ NOT FOUND'}")
+print("=" * 60)
 
 # Configuration
 DOMAIN = os.environ.get('DOMAIN', 'http://localhost:5000')
@@ -58,6 +71,13 @@ def create_checkout_session():
         
         return jsonify({'sessionId': checkout_session.id})
     except Exception as e:
+        import traceback
+        traceback.print_exc()
+        print(f"DEBUG: stripe type: {type(stripe)}")
+        try:
+            print(f"DEBUG: stripe.checkout type: {type(stripe.checkout)}")
+        except:
+            print("DEBUG: stripe.checkout access failed")
         return jsonify({'error': str(e)}), 403
 
 

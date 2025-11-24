@@ -4,35 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Access - Christopher Lynn Systems</title>
-    <meta name="description" content="Get instant access to exclusive resources and tools">
+    <title>Get Instant Access - Christopher Lynn Systems</title>
     <script src="https://js.stripe.com/v3/"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            background-color: #0f172a;
+            color: #e2e8f0;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            color: #e2e8f0;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%);
         }
 
         .container {
-            max-width: 600px;
             width: 100%;
+            max-width: 480px;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border-radius: 24px;
             padding: 48px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -242,7 +247,7 @@
                 <p>Velocity Without Burnout</p>
             </div>
 
-            <h2>Get Instant Access</h2>
+            <h2>The Confident Leader Toolkit</h2>
             <p class="subtitle">Unlock exclusive resources, tools, and frameworks designed to help you achieve clarity,
                 optimize energy, and execute with focus.</p>
 
@@ -254,7 +259,7 @@
             </div>
 
             <div class="price">
-                <div class="price-amount">$97</div>
+                <div class="price-amount">$47</div>
                 <div class="price-period">one-time payment</div>
             </div>
 
