@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Resources - Christopher Lynn Systems</title>
+    <meta name="description" content="Get access to exclusive resources and frameworks">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1749Z38SZB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-1749Z38SZB');
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+        })(window, document, "clarity", "script", "uadzpwtvl7");
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Premium Resources Section Styles */
+        .premium-section {
+            padding: 80px 20px;
+            background: var(--background-main, #0a0e1a);
+        }
+
+        .premium-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .premium-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .premium-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .premium-header p {
+            font-size: 20px;
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .resource-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(20, 184, 166, 0.2);
+            border-color: rgba(20, 184, 166, 0.5);
+        }
+
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 24px;
+        }
+
+        .resource-card h3 {
+            font-size: 24px;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+        }
+
+        .resource-card p {
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .resource-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 24px;
+        }
+
+        .resource-features li {
+            color: #cbd5e1;
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .resource-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #14b8a6;
+            font-weight: bold;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
+            border: 2px solid rgba(20, 184, 166, 0.3);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            color: #e2e8f0;
+            margin-bottom: 16px;
+        }
+
+        .cta-section .price {
+            font-size: 64px;
+            font-weight: 800;
+            color: #14b8a6;
+            margin: 24px 0;
+        }
+
+        .cta-section .price-note {
+            color: #94a3b8;
+            font-size: 18px;
+            margin-bottom: 32px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 20px 60px;
+            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 30px rgba(20, 184, 166, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.5);
+        }
+
+        .guarantee {
+            margin-top: 32px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .premium-header h1 {
+                font-size: 36px;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section {
+                padding: 40px 24px;
+            }
+
+            .cta-section h2 {
+                font-size: 28px;
+            }
+
+            .cta-section .price {
+                font-size: 48px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Your existing header/nav here -->
+
+    <section class="premium-section">
+        <div class="premium-container">
+            <div class="premium-header">
+                <h1>Premium Resource Library</h1>
+                <p>Get instant access to exclusive frameworks, tools, and resources designed to help you achieve
+                    velocity without burnout.</p>
+            </div>
+
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">📚</div>
+                    <h3>Complete Framework Library</h3>
+                    <p>Access our entire collection of proven frameworks and systems.</p>
+                    <ul class="resource-features">
+                        <li>The Clarity Framework PDF</li>
+                        <li>Energy Optimization Guide</li>
+                        <li>Focused Execution Playbook</li>
+                        <li>Weekly Planning Templates</li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">🎯</div>
+                    <h3>Implementation Tools</h3>
+                    <p>Practical tools you can use immediately to transform your approach.</p>
+                    <ul class="resource-features">
+                        <li>Decision-Making Matrix</li>
+                        <li>Priority Scoring System</li>
+                        <li>Energy Audit Worksheet</li>
+                        <li>Quarterly Planning Guide</li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">⚡</div>
+                    <h3>Exclusive Bonuses</h3>
+                    <p>Additional resources to accelerate your progress.</p>
+                    <ul class="resource-features">
+                        <li>Case Studies & Examples</li>
+                        <li>Checklists & Cheat Sheets</li>
+                        <li>Video Walkthroughs</li>
+                        <li>Regular Content Updates</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Get Lifetime Access Today</h2>
+                <div class="price">$97</div>
+                <p class="price-note">One-time payment • Lifetime access • No recurring fees</p>
+
+                <a href="http://localhost:5000" class="cta-button">
+                    Get Instant Access →
+                </a>
+
+                <p class="guarantee">
+                    🔒 Secure payment via Stripe • 30-day money-back guarantee
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your existing footer here -->
+</body>
+
+</html>
