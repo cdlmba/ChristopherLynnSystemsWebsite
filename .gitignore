@@ -40,3 +40,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Separate repositories (managed independently)
+completion-checklist/
