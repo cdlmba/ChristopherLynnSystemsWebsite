@@ -13,7 +13,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christopher Lynn Systems | Resources</title>
+    <title>Christopher Lynn Systems | Resources & Coaching</title>
+    <link rel="icon" type="image/jpeg" href="ChristopherLynnHeadshot.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -25,6 +26,142 @@
             y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "uadzpwtvl7");
     </script>
+    <style>
+        /* Additional styles for resources page */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+            color: var(--text-color-muted);
+        }
+
+        .feature-item::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .timeline-section {
+            background-color: var(--background-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .timeline-section h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color-main);
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item strong {
+            display: block;
+            color: var(--primary-color);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item p {
+            color: var(--text-color-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .value-prop-box {
+            background: linear-gradient(135deg, rgba(45, 212, 191, 0.05) 0%, rgba(30, 41, 59, 0.5) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+
+        .value-prop-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-main);
+        }
+
+        .value-prop-box p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-color-muted);
+            margin-bottom: 1rem;
+        }
+
+        .value-prop-box strong {
+            color: var(--primary-color);
+        }
+
+        .coaching-card {
+            background-color: var(--background-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            padding: 2.5rem;
+            margin: 2rem 0;
+        }
+
+        .coaching-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-main);
+        }
+
+        .coaching-card ul {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .coaching-card li {
+            color: var(--text-color-muted);
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .coaching-details {
+            background-color: rgba(45, 212, 191, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .coaching-details strong {
+            display: block;
+            color: var(--text-color-main);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .coaching-details p {
+            color: var(--text-color-muted);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -32,74 +169,133 @@
         <div class="main-container header-content">
             <a href="index.html" class="logo"><span class="logo-primary">christopher lynn</span> | systems</a>
             <nav class="main-nav">
-                <a href="index.html#about">About</a>
                 <a href="index.html#media">Media</a>
-                <a href="#social">Social</a>
+                <a href="index.html#social">Social</a>
                 <a href="resources.html" style="color: var(--primary-color);">Resources</a>
             </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="main-container text-center">
-            <h1 class="hero-title">The Toolkit</h1>
-            <p class="hero-subtitle">Digital systems and frameworks to help you lead with clarity.</p>
+            <h1 class="hero-title">Resources & Coaching</h1>
+            <p class="hero-subtitle">Systems and support for overwhelmed leaders</p>
         </div>
     </section>
 
-    <section class="section-padding">
+    <!-- Toolkit Section -->
+    <section class="section-padding" style="border-bottom: 1px solid var(--border-color);">
         <div class="main-container">
-            <div class="product-list">
-                <!-- Product 1: The Confident Leader Toolkit -->
-                <div class="product-item" style="border-color: var(--primary-color); box-shadow: var(--shadow-glow);">
-                    <img src="images/confident-leader-toolkit.jpg" alt="The Confident Leader Toolkit"
-                        style="width: 100%; border-radius: 8px; margin-bottom: 1.5rem;">
-                    <div class="product-header">
-                        <div class="product-title-group">
-                            <span class="product-tag" style="color: var(--primary-color);">Flagship System</span>
-                            <h3 class="product-title">The Confident Leader Toolkit</h3>
-                        </div>
-                        <div class="product-price">$47</div>
-                    </div>
-                    <p class="product-description">The complete operating system for clarity, energy, and execution.
-                        Includes the Clarity Audit, Confidence Operating Model, and 15+ AI prompts.</p>
-                    <div class="product-cta-container">
-                        <a href="confident-leader-toolkit.html" class="btn-buy">View Details</a>
-                    </div>
-                </div>
+            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Your Quick Win: The Confident Leader Toolkit</h2>
+            <p style="font-size: 1.1rem; color: var(--primary-color); font-weight: 600; margin-bottom: 2rem;">⏰ Limited
+                Time Offer</p>
 
-                <!-- Product 2 -->
-                <div class="product-item">
-                    <div class="product-header">
-                        <div class="product-title-group">
-                            <span class="product-tag">Framework</span>
-                            <h3 class="product-title">Energy Audit Protocol</h3>
-                        </div>
-                        <div class="product-price">$49</div>
-                    </div>
-                    <p class="product-description">Identify where your energy is leaking and build a sustainable rhythm
-                        of work and rest. Based on 20 years of leadership coaching.</p>
-                    <div class="product-cta-container">
-                        <a href="#" class="btn-buy" style="opacity: 0.5; cursor: not-allowed;">Coming Soon</a>
-                    </div>
-                </div>
+            <!-- Toolkit Image -->
+            <img src="images/confident-leader-toolkit.jpg" alt="The Confident Leader Toolkit"
+                style="width: 100%; max-width: 600px; border-radius: 0.5rem; margin: 0 auto 2.5rem; display: block; box-shadow: var(--shadow-glow); border: 1px solid var(--border-color);">
 
-                <!-- Product 3 -->
-                <div class="product-item">
-                    <div class="product-header">
-                        <div class="product-title-group">
-                            <span class="product-tag">Template</span>
-                            <h3 class="product-title">Strategic Review Dashboard</h3>
-                        </div>
-                        <div class="product-price">$29</div>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color-muted); margin-bottom: 1.5rem;">
+                You're overwhelmed. New manager? Solo operator? You're juggling everything without systems—the work, the
+                decisions, the chaos. Everything lives in your head.
+            </p>
+
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color-muted); margin-bottom: 2rem;">
+                The Confident Leader Toolkit is your first step. It's not theory. It's a system designed to give you
+                back control and time <strong style="color: var(--primary-color);">immediately</strong>.
+            </p>
+
+            <!-- Features -->
+            <div
+                style="background-color: var(--background-secondary); border: 1px solid var(--border-color); border-radius: 0.5rem; padding: 2rem; margin: 2rem 0;">
+                <h3 style="font-size: 1.25rem; margin-bottom: 1.5rem; color: var(--text-color-main);">What You Get (7
+                    Complete Systems)</h3>
+                <div class="feature-grid">
+                    <div class="feature-item">Clarity Audit System for cutting through noise</div>
+                    <div class="feature-item">Confidence Operating Model (Know Reality → Know Story → Know Decision)
                     </div>
-                    <p class="product-description">The exact Notion dashboard I use to conduct weekly, monthly, and
-                        quarterly reviews. Keep your strategy aligned with your daily actions.</p>
-                    <div class="product-cta-container">
-                        <a href="#" class="btn-buy" style="opacity: 0.5; cursor: not-allowed;">Coming Soon</a>
-                    </div>
+                    <div class="feature-item">Leadership Question Bank for root cause discovery</div>
+                    <div class="feature-item">Decision Confidence Map for pressure situations</div>
+                    <div class="feature-item">Weekly Theme Worksheet for purposeful planning</div>
+                    <div class="feature-item">15 AI Prompt Templates (built for free tools)</div>
                 </div>
             </div>
+
+            <!-- Timeline -->
+            <div class="timeline-section">
+                <h3>Results Timeline</h3>
+                <div class="timeline-item">
+                    <strong>Within 15 minutes:</strong>
+                    <p>Run a clarity audit, identify your 3 most important decisions, build a system around your biggest
+                        time-drain, and write clear communication for your stakeholders.</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>Within one week:</strong>
+                    <p>Stop being dragged by reactivity, make decisions with confidence, lead with more clarity, and
+                        have a system that supports you.</p>
+                </div>
+                <div class="timeline-item">
+                    <strong>Within one month:</strong>
+                    <p>See measurable team alignment improvements, eliminate recurring time-drains, and feel
+                        fundamentally confident in all your roles.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 2.5rem;">
+                <a href="https://buy.stripe.com/7sY28rgbscey5hM0G4dnW07" class="cta-button cta-button-primary">Get the
+                    Toolkit Now – $47</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coaching Section -->
+    <section class="section-padding">
+        <div class="main-container">
+            <!-- Value Prop -->
+            <div class="value-prop-box">
+                <h3>Ready for Something Deeper? 1:1 Coaching</h3>
+                <p>The toolkit gives you systems. Coaching gives you <strong>implementation and accountability</strong>.
+                </p>
+                <p>After 20 years helping leaders through overwhelm, I know exactly what works: <strong>define the real
+                        problem → find the smallest first solution → execute</strong>.</p>
+                <p>In our work together, we'll cut through the noise, identify what's actually broken, implement fixes
+                    you can run this week, and build momentum. The result: reduced stress, clarity, and time back in
+                    your week.</p>
+            </div>
+
+            <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">1:1 Coaching</h2>
+            <p style="font-size: 1.05rem; line-height: 1.8; color: var(--text-color-muted); margin-bottom: 2.5rem;">
+                Work directly with me to solve your specific overwhelm. We meet bi-weekly for focused strategy sessions,
+                problem-solving, and implementation support.
+            </p>
+
+            <div class="coaching-card">
+                <h3>What's Included</h3>
+                <ul>
+                    <li>Bi-weekly hourly coaching sessions</li>
+                    <li>Custom templates and frameworks for your situation</li>
+                    <li>Strategy sessions to define and solve your core problems</li>
+                    <li>Accountability between sessions</li>
+                </ul>
+
+                <div class="coaching-details">
+                    <strong>Frequency:</strong>
+                    <p>Every two weeks (hourly sessions)</p>
+                </div>
+
+                <div class="coaching-details">
+                    <strong>Best for:</strong>
+                    <p>New managers, solo operators, and leaders ready to move from overwhelm to clarity</p>
+                </div>
+
+                <a href="https://tidycal.com/christopherdlynn/15-minute-meeting" target="_blank"
+                    class="cta-button cta-button-primary">Schedule a Consultation</a>
+            </div>
+
+            <p
+                style="text-align: center; color: var(--text-color-muted); margin-top: 3rem; font-size: 0.9rem; font-style: italic;">
+                Group coaching and structured programs coming soon.
+            </p>
         </div>
     </section>
 
