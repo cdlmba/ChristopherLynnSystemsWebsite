@@ -230,9 +230,26 @@ a:hover {
     box-shadow: var(--shadow-glow);
 }
 
-/* ----------------------------------- */
-/* 6. Product List (New Minimalist)    */
-/* ----------------------------------- */
+.cta-button-secondary {
+    background-color: transparent;
+    color: var(--text-color-main);
+    border: 1px solid var(--border-color);
+}
+
+.cta-button-secondary:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+}
+
+.hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
 
 .product-list {
     display: grid;
