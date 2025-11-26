@@ -736,3 +736,25 @@ footer {
         font-size: 1.1rem;
     }
 }
+
+/* Choose Your Path - 3 Column Grid */
+#choose-your-path .pillar-grid {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+@media (min-width: 768px) {
+    #choose-your-path .pillar-grid {
+        grid-template-columns: repeat( 3, 1fr);
+    }
+}
+
+#choose-your-path .pillar-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#choose-your-path .pillar-subtitle {
+    flex-grow: 1;
+}
