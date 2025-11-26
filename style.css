@@ -758,3 +758,7 @@ footer {
 #choose-your-path .pillar-subtitle {
     flex-grow: 1;
 }
+/* Darker card variant */
+.pillar-card-dark {
+    background-color: rgba(15, 23, 42, 0.8);
+}
