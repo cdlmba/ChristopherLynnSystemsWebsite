@@ -848,10 +848,6 @@ footer {
         flex-direction: column;
         align-items: flex-start;
     }
-
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
 }
 
 .media-thumbnail::before {
@@ -1102,4 +1098,257 @@ footer {
 
 .feature-item strong {
     color: var(--text-color-main);
+}
+
+/* ----------------------------------- */
+/* Educational Email Course (EEC)      */
+/* ----------------------------------- */
+
+.eec-section {
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.08) 0%, rgba(30, 41, 59, 0.6) 100%);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.eec-card {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .eec-card {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+    }
+}
+
+.eec-content {
+    text-align: left;
+}
+
+.eec-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(45, 212, 191, 0.2) 0%, rgba(45, 212, 191, 0.1) 100%);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.eec-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-color-main);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+
+.eec-subtitle {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.eec-intro {
+    margin-bottom: 1.5rem;
+}
+
+.eec-intro p {
+    color: var(--text-color-muted);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.eec-highlight {
+    color: var(--text-color-main) !important;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.eec-breakdown {
+    margin-bottom: 1.5rem;
+}
+
+.eec-day {
+    color: var(--text-color-muted);
+    font-size: 0.9rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+.eec-day:last-child {
+    border-bottom: none;
+}
+
+.eec-tagline {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color-main);
+    margin-top: 1rem;
+}
+
+/* EEC Form Styles */
+.eec-form-container {
+    background: rgba(15, 23, 42, 0.6);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-color);
+}
+
+.eec-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.eec-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.eec-form-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color-main);
+}
+
+.eec-form-group input {
+    padding: 0.875rem 1rem;
+    background-color: var(--background-main);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-color-main);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.eec-form-group input::placeholder {
+    color: var(--text-color-muted);
+}
+
+.eec-form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.15);
+}
+
+.eec-submit-btn {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--background-main);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+}
+
+.eec-submit-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .eec-card {
+        padding: 1.5rem;
+    }
+
+    .eec-title {
+        font-size: 1.5rem;
+    }
+
+    .eec-subtitle {
+        font-size: 1rem;
+    }
+
+    .eec-form-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Styling for SendFox capture form in coaching page */
+.sendfox-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.sendfox-form p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.sendfox-form label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-color-main);
+}
+
+.sendfox-form input {
+    padding: 0.875rem 1rem;
+    background-color: var(--background-main);
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    color: var(--text-color-main);
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.sendfox-form input::placeholder {
+    color: var(--text-color-muted);
+}
+
+.sendfox-form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.15);
+}
+
+.sendfox-form button {
+    padding: 1rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--background-main);
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    /* Make button full width to match inputs */
+}
+
+.sendfox-form button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+@media (max-width: 768px) {
+    .sendfox-form {
+        gap: 1rem;
+    }
+
+    .sendfox-form button {
+        padding: 0.8rem 1.5rem;
+    }
 }
