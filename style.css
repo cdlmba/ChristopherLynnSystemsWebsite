@@ -1122,15 +1122,19 @@ footer {
 
 @media (min-width: 768px) {
     .eec-card {
-        grid-template-columns: 1.2fr 1fr;
-        align-items: center;
+        grid-template-columns: 1fr;
+        align-items: start;
+        max-width: 800px;
+        margin: 0 auto;
     }
 }
 
 .eec-content {
     text-align: left;
+    /* Keep left alignment or change to center if desired? User said "under leading text". Left usually looks best for reading. */
 }
 
+/* Restored Styles */
 .eec-badge {
     display: inline-block;
     background: linear-gradient(135deg, rgba(45, 212, 191, 0.2) 0%, rgba(45, 212, 191, 0.1) 100%);
@@ -1199,10 +1203,12 @@ footer {
 
 /* EEC Form Styles */
 .eec-form-container {
-    background: rgba(15, 23, 42, 0.6);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--border-color);
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    margin-top: -1rem;
+    /* Pull it up a bit since we removed padding/gap from grid might be large */
 }
 
 .eec-form {
