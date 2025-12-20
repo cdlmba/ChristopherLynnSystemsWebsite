@@ -30,7 +30,7 @@
         /* Premium Resources Section Styles */
         .premium-section {
             padding: 80px 20px;
-            background: var(--background-main, #0a0e1a);
+            background: var(--background-main);
         }
 
         .premium-container {
@@ -47,7 +47,7 @@
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -55,7 +55,7 @@
 
         .premium-header p {
             font-size: 20px;
-            color: #cbd5e1;
+            color: var(--text-color-muted);
             max-width: 700px;
             margin: 0 auto;
             line-height: 1.6;
@@ -78,14 +78,14 @@
 
         .resource-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(20, 184, 166, 0.2);
-            border-color: rgba(20, 184, 166, 0.5);
+            box-shadow: 0 20px 60px rgba(45, 212, 191, 0.2);
+            border-color: var(--primary-color);
         }
 
         .resource-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
             border-radius: 16px;
             display: flex;
             align-items: center;
@@ -96,12 +96,12 @@
 
         .resource-card h3 {
             font-size: 24px;
-            color: #e2e8f0;
+            color: var(--text-color-main);
             margin-bottom: 16px;
         }
 
         .resource-card p {
-            color: #94a3b8;
+            color: var(--text-color-muted);
             line-height: 1.6;
             margin-bottom: 24px;
         }
@@ -113,7 +113,7 @@
         }
 
         .resource-features li {
-            color: #cbd5e1;
+            color: var(--text-color-main);
             padding: 8px 0;
             padding-left: 28px;
             position: relative;
@@ -123,13 +123,13 @@
             content: "✓";
             position: absolute;
             left: 0;
-            color: #14b8a6;
+            color: var(--primary-color);
             font-weight: bold;
         }
 
         .cta-section {
-            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1) 0%, rgba(6, 182, 212, 0.1) 100%);
-            border: 2px solid rgba(20, 184, 166, 0.3);
+            background: rgba(45, 212, 191, 0.05);
+            border: 2px solid rgba(45, 212, 191, 0.2);
             border-radius: 24px;
             padding: 60px 40px;
             text-align: center;
@@ -137,19 +137,19 @@
 
         .cta-section h2 {
             font-size: 36px;
-            color: #e2e8f0;
+            color: var(--text-color-main);
             margin-bottom: 16px;
         }
 
         .cta-section .price {
             font-size: 64px;
             font-weight: 800;
-            color: #14b8a6;
+            color: var(--primary-color);
             margin: 24px 0;
         }
 
         .cta-section .price-note {
-            color: #94a3b8;
+            color: var(--text-color-muted);
             font-size: 18px;
             margin-bottom: 32px;
         }
@@ -157,19 +157,19 @@
         .cta-button {
             display: inline-block;
             padding: 20px 60px;
-            background: linear-gradient(135deg, #14b8a6 0%, #06b6d4 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+            color: var(--background-main);
             text-decoration: none;
             border-radius: 12px;
             font-size: 20px;
             font-weight: 600;
             transition: all 0.3s ease;
-            box-shadow: 0 8px 30px rgba(20, 184, 166, 0.4);
+            box-shadow: 0 8px 30px rgba(45, 212, 191, 0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(20, 184, 166, 0.5);
+            box-shadow: 0 12px 40px rgba(45, 212, 191, 0.5);
         }
 
         .guarantee {
@@ -256,7 +256,8 @@
                 <div class="price">$47</div>
                 <p class="price-note">One-time payment • Lifetime access • No recurring fees</p>
 
-                <a href="http://localhost:5000" class="cta-button">
+                <a href="https://buy.stripe.com/7sY28rgbscey5hM0G4dnW07?prefilled_promo_code=BLACKFRIDAY"
+                    class="cta-button">
                     Get Instant Access →
                 </a>
 
