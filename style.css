@@ -1382,3 +1382,106 @@ footer {
         padding: 0.8rem 1.5rem;
     }
 }
+/* ----------------------------------- */
+/* Case Study Styles                   */
+/* ----------------------------------- */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+    text-align: left;
+}
+
+@media (min-width: 992px) {
+    .case-study-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.case-study-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2.5rem;
+    border-radius: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.case-study-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+    opacity: 0.8;
+}
+
+.case-study-card:hover {
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-5px);
+    border-color: rgba(45, 212, 191, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+}
+
+.case-study-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.case-study-title {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-color-main);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.case-study-body {
+    font-size: 1rem;
+    color: var(--text-color-muted);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+}
+
+.case-study-body em {
+    color: var(--text-color-main);
+    font-style: italic;
+}
+
+.case-study-result {
+    background: rgba(45, 212, 191, 0.1);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-top: auto;
+}
+
+.case-study-result strong {
+    color: var(--primary-color);
+    display: block;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.case-study-result p {
+    color: var(--text-color-main);
+    font-weight: 600;
+    margin: 0;
+}
