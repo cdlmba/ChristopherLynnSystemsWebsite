@@ -1400,6 +1400,12 @@ footer {
     }
 }
 
+@media (min-width: 1200px) {
+    .case-study-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .case-study-card {
     background: rgba(30, 41, 59, 0.4);
     backdrop-filter: blur(12px);
