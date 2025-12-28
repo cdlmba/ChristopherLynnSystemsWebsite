@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { analyzeResume, AnalysisType } from './services/geminiService';
+import { analyzeResume, AnalysisType, AIProvider } from './services/aiService';
 import './index.css';
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [provider, setProvider] = useState<AIProvider>('openai'); // Default to OpenAI as requested
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +30,7 @@ function App() {
     setAnalysisResult(null);
 
     try {
-      const result = await analyzeResume(resumeText, jobText, type);
+      const result = await analyzeResume(resumeText, jobText, type, provider);
       setAnalysisResult(result);
     } catch (err: any) {
       setError(err.message || "An error occurred during analysis.");
@@ -70,6 +71,23 @@ function App() {
         <header className="dashboard-header">
           <h1 className="hero-title">Resume Dashboard</h1>
           <p className="hero-subtitle">Analyze, improve, and tailor your professional profile.</p>
+
+          <div className="provider-toggle glass-panel" style={{ display: 'inline-flex', padding: '4px', gap: '4px', marginTop: '20px' }}>
+            <button
+              className={`tab ${provider === 'openai' ? 'active' : ''}`}
+              onClick={() => setProvider('openai')}
+              style={{ fontSize: '0.9rem' }}
+            >
+              OpenAI (GPT-4)
+            </button>
+            <button
+              className={`tab ${provider === 'gemini' ? 'active' : ''}`}
+              onClick={() => setProvider('gemini')}
+              style={{ fontSize: '0.9rem' }}
+            >
+              Google Gemini
+            </button>
+          </div>
         </header>
 
         <div className="input-grid">
