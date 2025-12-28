@@ -6,36 +6,21 @@
       "DOM.Iterable",
       "ESNext"
     ],
-<<<<<<< HEAD
     "types": [
       "node"
     ],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
-=======
-    "types": [],
-    "allowJs": false,
-    "skipLibCheck": false,
-    "esModuleInterop": false,
->>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
-<<<<<<< HEAD
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx"
-=======
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
->>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
   },
   "include": [
     "src"

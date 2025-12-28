@@ -40,7 +40,7 @@ export const analyzeResume = async (
             if (!GEMINI_API_KEY) throw new Error("Gemini API Key is missing. Please add VITE_GEMINI_API_KEY.");
 
             const { text } = await generateText({
-                model: google('gemini-1.5-flash-latest'),
+                model: google('gemini-flash-latest'),
                 prompt: prompt,
             });
             return text;
