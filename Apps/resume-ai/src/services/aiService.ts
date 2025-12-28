@@ -1,19 +1,19 @@
 import { generateText } from 'ai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
-import { createOpenAI } from '@ai-sdk/openai';
+// import { createOpenAI } from '@ai-sdk/openai';
 
 // @ts-ignore
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 // @ts-ignore
-const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
+// const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 const google = createGoogleGenerativeAI({
     apiKey: GEMINI_API_KEY,
 });
 
-const openai = createOpenAI({
-    apiKey: OPENAI_API_KEY,
-});
+// const openai = createOpenAI({
+//     apiKey: OPENAI_API_KEY,
+// });
 
 export type AnalysisType = 'Full Analysis' | 'Analyze Skills' | 'ATS Score' | 'Cover Letter';
 export type AIProvider = 'gemini' | 'openai';
@@ -27,24 +27,24 @@ export const analyzeResume = async (
     const prompt = getPrompt(resumeText, jobDescription, type);
 
     try {
-        if (provider === 'openai') {
-            if (!OPENAI_API_KEY) throw new Error("OpenAI API Key is missing. Please add VITE_OPENAI_API_KEY.");
+        // if (provider === 'openai') {
+        //     if (!OPENAI_API_KEY) throw new Error("OpenAI API Key is missing. Please add VITE_OPENAI_API_KEY.");
+        //
+        //     const { text } = await generateText({
+        //         model: openai('gpt-4o-mini'),
+        //         system: "You are an expert HR and Career Coach.",
+        //         prompt: prompt,
+        //     });
+        //     return text;
+        // } else {
+        if (!GEMINI_API_KEY) throw new Error("Gemini API Key is missing. Please add VITE_GEMINI_API_KEY.");
 
-            const { text } = await generateText({
-                model: openai('gpt-4o-mini'),
-                system: "You are an expert HR and Career Coach.",
-                prompt: prompt,
-            });
-            return text;
-        } else {
-            if (!GEMINI_API_KEY) throw new Error("Gemini API Key is missing. Please add VITE_GEMINI_API_KEY.");
-
-            const { text } = await generateText({
-                model: google('gemini-flash-latest'),
-                prompt: prompt,
-            });
-            return text;
-        }
+        const { text } = await generateText({
+            model: google('gemini-flash-latest'),
+            prompt: prompt,
+        });
+        return text;
+        // }
     } catch (error: any) {
         console.error("AI API Error:", error);
         throw error;

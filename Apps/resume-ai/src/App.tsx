@@ -13,7 +13,7 @@ function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [provider, setProvider] = useState<AIProvider>('openai'); // Default to OpenAI as requested
+  const [provider, setProvider] = useState<AIProvider>('gemini'); // Set default to Gemini
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +72,7 @@ function App() {
           <h1 className="hero-title">Resume Dashboard</h1>
           <p className="hero-subtitle">Analyze, improve, and tailor your professional profile.</p>
 
+          {/* OpenAI Toggle - Commented out for now
           <div className="provider-toggle glass-panel" style={{ display: 'inline-flex', padding: '4px', gap: '4px', marginTop: '20px' }}>
             <button
               className={`tab ${provider === 'openai' ? 'active' : ''}`}
@@ -88,6 +89,7 @@ function App() {
               Google Gemini
             </button>
           </div>
+          */}
         </header>
 
         <div className="input-grid">
