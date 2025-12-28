@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { analyzeResume, AnalysisType, AIProvider } from './services/aiService';
+=======
+import { analyzeResume, AnalysisType } from './services/geminiService';
+>>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
 import './index.css';
 
 function App() {
@@ -13,7 +17,10 @@ function App() {
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [analysisResult, setAnalysisResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+<<<<<<< HEAD
   const [provider, setProvider] = useState<AIProvider>('openai'); // Default to OpenAI as requested
+=======
+>>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -30,7 +37,11 @@ function App() {
     setAnalysisResult(null);
 
     try {
+<<<<<<< HEAD
       const result = await analyzeResume(resumeText, jobText, type, provider);
+=======
+      const result = await analyzeResume(resumeText, jobText, type);
+>>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
       setAnalysisResult(result);
     } catch (err: any) {
       setError(err.message || "An error occurred during analysis.");
@@ -71,6 +82,7 @@ function App() {
         <header className="dashboard-header">
           <h1 className="hero-title">Resume Dashboard</h1>
           <p className="hero-subtitle">Analyze, improve, and tailor your professional profile.</p>
+<<<<<<< HEAD
 
           <div className="provider-toggle glass-panel" style={{ display: 'inline-flex', padding: '4px', gap: '4px', marginTop: '20px' }}>
             <button
@@ -88,6 +100,8 @@ function App() {
               Google Gemini
             </button>
           </div>
+=======
+>>>>>>> 5207902356284733d581ff211aece46fd9d7b8b8
         </header>
 
         <div className="input-grid">
