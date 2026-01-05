@@ -10,10 +10,11 @@ function App() {
   const [jobUrl, setJobUrl] = useState('');
   const [activeResumeTab, setActiveResumeTab] = useState<'paste' | 'upload'>('paste');
   const [activeJobTab, setActiveJobTab] = useState<'paste' | 'link'>('paste');
-  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState<AnalysisType | null>(null);
   const [analysisResult, setAnalysisResult] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [provider, setProvider] = useState<AIProvider>('gemini'); // Set default to Gemini
+  const [copied, setCopied] = useState(false);
 
   const handleUnlock = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,7 +27,7 @@ function App() {
       return;
     }
     setError(null);
-    setIsAnalyzing(true);
+    setIsAnalyzing(type);
     setAnalysisResult(null);
 
     try {
@@ -35,7 +36,18 @@ function App() {
     } catch (err: any) {
       setError(err.message || "An error occurred during analysis.");
     } finally {
-      setIsAnalyzing(false);
+      setIsAnalyzing(null);
+    }
+  };
+
+  const handleCopy = async () => {
+    if (!analysisResult) return;
+    try {
+      await navigator.clipboard.writeText(analysisResult);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
     }
   };
 
@@ -44,7 +56,7 @@ function App() {
       <div className="app-container">
         <div className="landing-hero">
           <div className="hero-content glass-panel">
-            <h1 className="hero-title">Resume AI</h1>
+            <h1 className="hero-title">Resume Analyzer</h1>
             <p className="hero-subtitle">Optimize your resume against any job description with the power of Google Gemini.</p>
             <form onSubmit={handleUnlock} className="email-box">
               <input
@@ -69,7 +81,7 @@ function App() {
     <div className="app-container">
       <div className="dashboard">
         <header className="dashboard-header">
-          <h1 className="hero-title">Resume Dashboard</h1>
+          <h1 className="hero-title">Resume Analyzer</h1>
           <p className="hero-subtitle">Analyze, improve, and tailor your professional profile.</p>
 
           {/* OpenAI Toggle - Commented out for now
@@ -167,17 +179,37 @@ function App() {
         </div>
 
         <div className="action-bar">
-          <button className="btn-primary" onClick={() => handleAnalysis('Full Analysis')} disabled={isAnalyzing}>
-            {isAnalyzing ? 'Analyzing...' : 'Full Analysis'}
+          <button
+            className="btn-primary"
+            onClick={() => handleAnalysis('Full Analysis')}
+            disabled={!!isAnalyzing}
+            style={{ background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)' }}
+          >
+            {isAnalyzing === 'Full Analysis' ? 'Analyzing...' : '🔍 Full Analysis'}
           </button>
-          <button className="btn-primary" onClick={() => handleAnalysis('Analyze Skills')} disabled={isAnalyzing}>
-            {isAnalyzing ? 'Analyzing...' : 'Analyze Skills'}
+          <button
+            className="btn-primary"
+            onClick={() => handleAnalysis('Analyze Skills')}
+            disabled={!!isAnalyzing}
+            style={{ background: 'linear-gradient(135deg, #8b5cf6, #6d28d9)' }}
+          >
+            {isAnalyzing === 'Analyze Skills' ? 'Analyzing...' : '🎯 Analyze Skills'}
           </button>
-          <button className="btn-primary" onClick={() => handleAnalysis('ATS Score')} disabled={isAnalyzing}>
-            {isAnalyzing ? 'Analyzing...' : 'ATS Friendliness'}
+          <button
+            className="btn-primary"
+            onClick={() => handleAnalysis('ATS Score')}
+            disabled={!!isAnalyzing}
+            style={{ background: 'linear-gradient(135deg, #10b981, #059669)' }}
+          >
+            {isAnalyzing === 'ATS Score' ? 'Analyzing...' : '📊 ATS Friendliness'}
           </button>
-          <button className="btn-primary" onClick={() => handleAnalysis('Cover Letter')} disabled={isAnalyzing}>
-            {isAnalyzing ? 'Analyzing...' : 'Cover Letter'}
+          <button
+            className="btn-primary"
+            onClick={() => handleAnalysis('Cover Letter')}
+            disabled={!!isAnalyzing}
+            style={{ background: 'linear-gradient(135deg, #f59e0b, #d97706)' }}
+          >
+            {isAnalyzing === 'Cover Letter' ? 'Analyzing...' : '✉️ Cover Letter'}
           </button>
         </div>
 
@@ -189,7 +221,32 @@ function App() {
 
         {analysisResult && (
           <div className="results-area glass-panel shadow-lg">
-            <h3 className="card-title">Analysis Results</h3>
+            <div className="results-header" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+              <h3 className="card-title" style={{ margin: 0 }}>Analysis Results</h3>
+              <button
+                onClick={handleCopy}
+                className="btn-secondary"
+                style={{
+                  padding: '6px 12px',
+                  fontSize: '0.875rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+              >
+                {copied ? (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Copied!
+                  </>
+                ) : (
+                  <>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    Copy to Clipboard
+                  </>
+                )}
+              </button>
+            </div>
             <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.6', fontSize: '1rem', color: 'var(--text-primary)' }}>
               {analysisResult}
             </div>
