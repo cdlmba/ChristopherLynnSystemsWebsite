@@ -19,8 +19,8 @@
 - [x] **Redesign Media Section**:
     - [x] Replace automatic link previews with custom, intentional high-quality images.
     - [x] Implemented a "Modal" system where clicking an image opens a detailed popup with the direct link, improving visual control and UX.
-    - [ ] **Asset Update**: Find and replace current media thumbnails with higher-resolution versions.
-    - [ ] Add a "Contact Us" element.
+    - [x] **Asset Update**: Generated and replaced media thumbnails with higher-resolution, professional versions.
+    - [x] **Add a "Contact Us" element**: Implemented a professional CTA for collaborations below the media grid.
 - [x] **Expand Footer**:
     - [x] Add site navigation links.
     - [x] Add a "Contact Us" element.

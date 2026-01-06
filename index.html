@@ -297,10 +297,10 @@
                 <!-- Full Strength Podcast -->
                 <div class="media-item" data-title="Full Strength Podcast"
                     data-desc="A Biblical Approach To AI - In this conversation, we explore how leadership systems and new technology can be integrated with clarity and focus."
-                    data-image="images/full-strength-podcast-thumbnail.jpg"
+                    data-image="images/full-strength-podcast-v2.png"
                     data-link="https://open.spotify.com/episode/7bJuHvkM7tpCN8SLQWnGmZ" data-cta="Listen on Spotify">
                     <div class="media-thumbnail">
-                        <img src="images/full-strength-podcast-thumbnail.jpg" alt="Full Strength Podcast">
+                        <img src="images/full-strength-podcast-v2.png" alt="Full Strength Podcast">
                         <div class="play-overlay">
                             <div class="play-icon">
                                 <svg viewBox="0 0 24 24">
@@ -318,10 +318,10 @@
                 <!-- X Space -->
                 <div class="media-item" data-title="X Space"
                     data-desc="Living with Clarity and Focus as a Christian Husband and Father. A deep dive into balancing leadership, family, and personal operating systems."
-                    data-image="images/x-space-thumbnail.png" data-link="https://x.com/i/spaces/1ZkKzZybgbXKv?s=20"
+                    data-image="images/x-space-v2.png" data-link="https://x.com/i/spaces/1ZkKzZybgbXKv?s=20"
                     data-cta="Listen on X">
                     <div class="media-thumbnail">
-                        <img src="images/x-space-thumbnail.png" alt="X Space">
+                        <img src="images/x-space-v2.png" alt="X Space">
                         <div class="play-overlay">
                             <div class="play-icon">
                                 <svg viewBox="0 0 24 24">
@@ -339,10 +339,10 @@
                 <!-- Men's Life Academy -->
                 <div class="media-item" data-title="Men's Life Academy"
                     data-desc="Building Effective Family Systems - Discussing how the same frameworks that work for enterprise operations can stabilize and empower your home life."
-                    data-image="images/mens-life-academy-thumbnail.png"
+                    data-image="images/mens-life-academy-v2.png"
                     data-link="https://www.youtube.com/watch?v=J2eOMDJneYc&t=1s" data-cta="Watch on YouTube">
                     <div class="media-thumbnail">
-                        <img src="images/mens-life-academy-thumbnail.png" alt="Men's Life Academy">
+                        <img src="images/mens-life-academy-v2.png" alt="Men's Life Academy">
                         <div class="play-overlay">
                             <div class="play-icon">
                                 <svg viewBox="0 0 24 24">
@@ -360,10 +360,10 @@
                 <!-- X Space - Present Father -->
                 <div class="media-item" data-title="X Space - Being a Present Father"
                     data-desc="Rest, Reflection & Leading Without Hurry. How to design a life that allows for true presence without sacrificing professional momentum."
-                    data-image="images/being-present-father-thumbnail.png"
-                    data-link="https://x.com/i/spaces/1OwGWeMrknnxQ?s=20" data-cta="Listen on X">
+                    data-image="images/present-father-v2.png" data-link="https://x.com/i/spaces/1OwGWeMrknnxQ?s=20"
+                    data-cta="Listen on X">
                     <div class="media-thumbnail">
-                        <img src="images/being-present-father-thumbnail.png" alt="X Space">
+                        <img src="images/present-father-v2.png" alt="X Space">
                         <div class="play-overlay">
                             <div class="play-icon">
                                 <svg viewBox="0 0 24 24">
@@ -377,6 +377,13 @@
                         <span class="media-description">Rest, Reflection & Leading Without Hurry</span>
                     </div>
                 </div>
+            </div>
+
+            <div class="media-cta">
+                <h3 class="media-cta-title">Interested in a Collaboration?</h3>
+                <p class="media-cta-text">Christopher is available for podcast guest spots, guest speaking, and
+                    exclusive workshops on systems and leadership. Reach out to discuss your event.</p>
+                <button id="mediaContactBtn" class="cta-button cta-button-primary">Inquire About Appearances</button>
             </div>
         </div>
     </section>
@@ -422,7 +429,7 @@
                 <p class="modal-desc" style="margin-bottom: 2rem;">Fill out the form below and I'll get back to you
                     within 24-48 hours.</p>
 
-                <form id="contactForm" action="https://formspree.io/f/xvgojgjb" method="POST">
+                <form id="contactForm" action="https://formspree.io/f/maqngzrg" method="POST">
                     <div class="contact-form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="contact-form-input" placeholder="Your Name"
@@ -438,7 +445,10 @@
                         <textarea id="message" name="message" class="contact-form-textarea"
                             placeholder="How can I help you?" required></textarea>
                     </div>
-                    <button type="submit" class="contact-submit-btn">Send Message</button>
+                    <button type="submit" id="contactSubmit" class="contact-submit-btn">Send Message</button>
+                    <div id="contactStatus"
+                        style="margin-top: 1.5rem; display: none; text-align: center; border-radius: 0.5rem; padding: 1rem;">
+                    </div>
                 </form>
             </div>
         </div>
@@ -644,10 +654,18 @@
             // Contact Modal Logic
             const contactModal = document.getElementById('contactModal');
             const openContactModal = document.getElementById('openContactModal');
+            const mediaContactBtn = document.getElementById('mediaContactBtn');
             const closeContactModalBtn = document.getElementById('closeContactModal');
 
             if (openContactModal) {
                 openContactModal.addEventListener('click', () => {
+                    contactModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            if (mediaContactBtn) {
+                mediaContactBtn.addEventListener('click', () => {
                     contactModal.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 });
@@ -679,6 +697,58 @@
             });
 
 
+            // Contact Form AJAX Submission
+            const contactForm = document.getElementById('contactForm');
+            const contactStatus = document.getElementById('contactStatus');
+            const contactSubmit = document.getElementById('contactSubmit');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const data = new FormData(contactForm);
+                    contactSubmit.disabled = true;
+                    contactSubmit.textContent = 'Sending...';
+
+                    try {
+                        const response = await fetch(contactForm.action, {
+                            method: contactForm.method,
+                            body: data,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            contactStatus.innerHTML = "Success! I've received your message.";
+                            contactStatus.style.display = 'block';
+                            contactStatus.style.background = 'rgba(45, 212, 191, 0.1)';
+                            contactStatus.style.color = 'var(--primary-color)';
+                            contactStatus.style.border = '1px solid rgba(45, 212, 191, 0.2)';
+                            contactForm.reset();
+
+                            // Close modal after a delay
+                            setTimeout(() => {
+                                closeContactModal();
+                                contactStatus.style.display = 'none';
+                                contactSubmit.disabled = false;
+                                contactSubmit.textContent = 'Send Message';
+                            }, 3000);
+                        } else {
+                            const errorData = await response.json();
+                            throw new Error(errorData.errors ? errorData.errors.map(err => err.message).join(', ') : 'Form submission failed');
+                        }
+                    } catch (error) {
+                        contactStatus.innerHTML = "Oops! Correlation failed. Please try again.";
+                        contactStatus.style.display = 'block';
+                        contactStatus.style.background = 'rgba(239, 68, 68, 0.1)';
+                        contactStatus.style.color = '#ef4444';
+                        contactStatus.style.border = '1px solid rgba(239, 68, 68, 0.2)';
+                        contactSubmit.disabled = false;
+                        contactSubmit.textContent = 'Send Message';
+                    }
+                });
+            }
         });
     </script>
 </body>

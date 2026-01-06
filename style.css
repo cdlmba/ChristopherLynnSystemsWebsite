@@ -759,6 +759,31 @@ footer {
     color: var(--text-color-muted);
 }
 
+.media-cta {
+    margin-top: 4rem;
+    padding: 3rem 2rem;
+    background: rgba(45, 212, 191, 0.03);
+    border: 1px dashed var(--border-color);
+    border-radius: 1.5rem;
+    text-align: center;
+}
+
+.media-cta-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color-main);
+    margin-bottom: 1rem;
+}
+
+.media-cta-text {
+    color: var(--text-color-muted);
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
 /* Modal Styles */
 .media-modal {
     position: fixed;
