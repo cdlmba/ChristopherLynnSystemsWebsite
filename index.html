@@ -17,7 +17,9 @@
     <link rel="icon" type="image/jpeg" href="ChristopherLynnHeadshot.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=3">
     <script type="text/javascript">
         (function (c, l, a, r, i, t, y) {
@@ -76,13 +78,14 @@
 
                 </div>
                 <div class="hero-content-right">
-                    <h1 class="hero-title">Build systems.<br>Reduce burnout.</h1>
+                    <h1 class="hero-title reveal">Build systems.<br><span class="font-serif"
+                            style="font-weight: 400; font-style: italic;">Reduce burnout.</span></h1>
                     <br>
-                    <p class="hero-subtitle">
+                    <p class="hero-subtitle reveal reveal-delay-1">
                         I help leaders cut complexity, eliminate bottlenecks, and get back hours every week with systems
                         that actually scale.
                     </p>
-                    <div class="hero-cta-group">
+                    <div class="hero-cta-group reveal reveal-delay-2">
                         <a href="https://tidycal.com/christopherdlynn/strategy-call" target="_blank"
                             rel="noopener noreferrer" class="cta-button cta-button-primary"
                             aria-label="Book a strategy call with Christopher Lynn">Book a Strategy Call</a>
@@ -97,7 +100,7 @@
     </section>
 
     <!-- EDUCATIONAL EMAIL COURSE SECTION -->
-    <section id="email-course" class="eec-section section-padding">
+    <section id="email-course" class="eec-section section-padding reveal">
         <div class="main-container">
             <div class="eec-card">
                 <div class="eec-content">
@@ -145,24 +148,24 @@
         </div>
     </section>
 
-    <section id="pillars" class="section-padding">
+    <section id="pillars" class="section-padding reveal">
         <div class="main-container">
             <h1 style="text-align: center; margin-bottom: 2rem;">The 3 Pillars</h1>
             <div class="pillar-grid">
                 <!-- Radical Clarity -->
-                <div class="pillar-card">
+                <div class="pillar-card reveal">
                     <span class="pillar-number">01</span>
                     <h3 class="pillar-title">Radical Clarity</h3>
                     <p class="pillar-subtitle">The Strategic Foundation</p>
                 </div>
                 <!-- Optimized Energy -->
-                <div class="pillar-card">
+                <div class="pillar-card reveal reveal-delay-1">
                     <span class="pillar-number">02</span>
                     <h3 class="pillar-title">Optimized Energy</h3>
                     <p class="pillar-subtitle">Systems for Sustainability</p>
                 </div>
                 <!-- Focused Execution -->
-                <div class="pillar-card">
+                <div class="pillar-card reveal reveal-delay-2">
                     <span class="pillar-number">03</span>
                     <h3 class="pillar-title">Focused Execution</h3>
                     <p class="pillar-subtitle">High-Leverage Action</p>
@@ -696,6 +699,23 @@
                 }
             });
 
+
+            // Scroll Reveal Observer
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.reveal').forEach(el => {
+                revealObserver.observe(el);
+            });
 
             // Contact Form AJAX Submission
             const contactForm = document.getElementById('contactForm');

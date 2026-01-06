@@ -2,7 +2,7 @@
 
 ## 📸 Visuals & Photography
 - [x] **Replace Hero Photography**: Updated the main headshot with the newly provided professional photo.
-- [ ] **Graphic Design Polish**: Hire a designer (e.g., via Fiverr) to level up the overall appearance and creating custom visual assets.
+- [x] **Graphic Design Polish**: Implemented a comprehensive UI Audit, updated typography (Outfit & Playfair Display), added glassmorphism effects, and scroll-reveal animations for a premium feel.
 
 ## ✍️ Content & Authority
 - [x] **Create "About" Page**: 
