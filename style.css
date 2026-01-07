@@ -40,7 +40,7 @@
 }
 
 body {
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: var(--text-color-main);
     background-color: var(--background-main);
     line-height: 1.6;
@@ -54,13 +54,13 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
 
 .font-serif {
-    font-family: 'Lato', serif;
+    font-family: 'Public Sans', serif;
 }
 
 a {
@@ -1359,7 +1359,7 @@ footer {
     border-radius: 0.5rem;
     color: var(--text-color-main);
     font-size: 1rem;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -1381,7 +1381,7 @@ footer {
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 700;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 0.5rem;
@@ -1438,7 +1438,7 @@ footer {
     border-radius: 0.5rem;
     color: var(--text-color-main);
     font-size: 1rem;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -1908,7 +1908,7 @@ footer {
     border-radius: 0.5rem;
     color: var(--text-color-main);
     font-size: 1rem;
-    font-family: 'Monserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
