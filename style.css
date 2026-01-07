@@ -858,10 +858,12 @@ footer {
 }
 
 .modal-content {
-    background: var(--background-secondary);
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border: 1px solid var(--border-color);
-    border-radius: 1rem;
-    max-width: 500px;
+    border-radius: 1.5rem;
+    max-width: 600px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -1206,14 +1208,16 @@ footer {
 }
 
 .eec-card {
-    background-color: var(--background-secondary);
+    background: rgba(30, 41, 59, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
-    border-radius: 1.5rem;
-    padding: 3rem;
+    border-radius: 2rem;
+    padding: 3.5rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-xl);
     position: relative;
     overflow: hidden;
 }
@@ -1454,9 +1458,93 @@ footer {
 }
 
 .sendfox-form button:hover {
-    background-color: var(--primary-hover);
+    background: var(--primary-hover);
     transform: translateY(-2px);
     box-shadow: var(--shadow-glow);
+}
+
+/* Global Coaching & Resource Cards (formerly in page styles) */
+.coaching-card {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 1.25rem;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.coaching-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl), var(--shadow-glow);
+}
+
+.coaching-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+}
+
+.coaching-card ul {
+    margin: 1.5rem 0;
+    list-style: none;
+}
+
+.coaching-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color-muted);
+}
+
+.coaching-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.coaching-details {
+    background: rgba(45, 212, 191, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.coaching-details strong {
+    display: block;
+    color: var(--text-color-main);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.coaching-details p {
+    color: var(--text-color-muted);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.checklist-box {
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 1.5rem;
+    padding: 3rem;
+    margin: 2rem 0;
+}
+
+.checklist-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color-main);
 }
 
 @media (max-width: 768px) {

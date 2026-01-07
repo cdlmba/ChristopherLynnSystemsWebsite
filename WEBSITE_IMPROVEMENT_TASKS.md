@@ -2,7 +2,7 @@
 
 ## 📸 Visuals & Photography
 - [x] **Replace Hero Photography**: Updated the main headshot with the newly provided professional photo.
-- [x] **Graphic Design Polish**: Implemented a comprehensive UI Audit, updated typography (Outfit & Playfair Display), added glassmorphism effects, and scroll-reveal animations for a premium feel.
+- [x] **Graphic Design Polish**: Implemented a comprehensive UI Audit, updated typography (Outfit & Playfair Display applied site-wide), added glassmorphism effects, and scroll-reveal animations for a premium feel.
 
 ## ✍️ Content & Authority
 - [x] **Create "About" Page**: 
