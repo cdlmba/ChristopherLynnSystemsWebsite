@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Times New Roman', serif;
+    font-family: 'Outfit', sans-serif;
     font-weight: 700;
     letter-spacing: -0.02em;
 }
@@ -815,10 +815,19 @@ footer {
 .media-cta {
     margin-top: 4rem;
     padding: 3rem 2rem;
-    background: rgba(45, 212, 191, 0.03);
-    border: 1px dashed var(--border-color);
+    background: rgba(30, 41, 59, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
     border-radius: 1.5rem;
     text-align: center;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.media-cta:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+    transform: translateY(-2px);
 }
 
 .media-cta-title {
