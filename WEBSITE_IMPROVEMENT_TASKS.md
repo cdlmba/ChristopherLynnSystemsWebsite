@@ -1,14 +1,14 @@
 # Website Improvement Task List
 
 ## 📸 Visuals & Photography
-- [x] **Replace Hero Photography**: Updated the main headshot with the newly provided professional photo.
-- [x] **Graphic Design Polish**: Implemented a comprehensive UI Audit, updated typography (Outfit & Playfair Display applied site-wide), added glassmorphism effects, and scroll-reveal animations for a premium feel.
+- [x] **Replace Hero Photography**: Updated the main headshot with the newly provided professional photo (V2).
+- [x] **Graphic Design Polish**: Implemented a comprehensive UI Audit, updated typography (Montserrat, Plus Jakarta Sans & Public Sans applied site-wide), added glassmorphism effects, and scroll-reveal animations for a premium feel.
 
 ## ✍️ Content & Authority
 - [x] **Create "About" Page**: 
     - [x] Detail professional background and "resume" on the topic of burnout.
     - [x] Clearly articulate the value proposition: "Why am I worth the money?"
-- [ ] **Establish a Blog**: Create a section for long-form content to drive SEO and authority.
+- [x] **Establish a Blog**: Created a static blog architecture (Python + Markdown) to separate content from code, enabling easy publishing for long-form SEO content.
 - [ ] **Add Brand Logos**: Create a section showcasing brands and organizations worked with to build instant credibility.
 
 ## 🧩 UI/UX Improvements
@@ -20,13 +20,14 @@
     - [x] Replace automatic link previews with custom, intentional high-quality images.
     - [x] Implemented a "Modal" system where clicking an image opens a detailed popup with the direct link, improving visual control and UX.
     - [x] **Asset Update**: Generated and replaced media thumbnails with higher-resolution, professional versions.
-    - [x] **Add a "Contact Us" element**: Implemented a professional CTA for collaborations below the media grid.
+    - [x] **Add a "Contact Us" element**: Implemented a professional glassmorphism CTA for collaborations below the media grid.
 - [x] **Expand Footer**:
     - [x] Add site navigation links.
     - [x] Add a "Contact Us" element.
 
 ## 📈 Conversion & Strategy
-- [x] **Implement Urgency Banner**: Created a prominent sitewide banner for the January 9th Group Coaching cohort.
+- [x] **Implement Urgency Banner**: Created a prominent sitewide banner pivoted to promote the Strategy Call (replacing the previous Group Coaching text).
+- [x] **Update Coaching Offers**: Updated the Group Coaching card to "Waitlist" status to avoid displaying expired dates.
 - [ ] **Develop Traffic Strategy**:
     - [ ] **Backlink Program**: Outreach to podcasts for episode links.
     - [ ] **Incentivized Reviews**: Offer free/reduced price services to large brands in exchange for showcased reviews.

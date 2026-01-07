@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1749Z38SZB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1749Z38SZB');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | Christopher Lynn Systems</title>
+    <link rel="icon" type="image/jpeg" href="../ChristopherLynnHeadshot_v2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:wght@400..800&family=Public+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* Specific Blog Styles - Inline for now to keep things self-contained during build */
+        .blog-header {
+            background-color: var(--background-secondary);
+            border-bottom: 1px solid var(--border-color);
+            padding: 6rem 0 4rem;
+            text-align: center;
+        }
+
+        .blog-meta {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+            font-weight: 600;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.2;
+        }
+
+        .blog-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-color-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .blog-content {
+            max-width: 740px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color-main);
+        }
+
+        /* Typography within blog content */
+        .blog-content h2 {
+            font-size: 1.8rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-color-emphasis);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-content ul,
+        .blog-content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            color: var(--text-color-muted);
+        }
+
+        .blog-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-content blockquote {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-color-emphasis);
+            margin: 2rem 0;
+            background: linear-gradient(90deg, rgba(45, 212, 191, 0.05) 0%, transparent 100%);
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .blog-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .blog-content a {
+            color: var(--primary-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        .blog-content a:hover {
+            color: var(--primary-hover);
+        }
+
+        .author-box {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-color);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-color-muted);
+        }
+
+        .back-link:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="main-container header-content">
+            <a href="../index.html" class="logo"><span class="logo-primary">christopher lynn</span> | systems</a>
+            <nav class="main-nav">
+                <a href="../about.html">About</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../index.html#case-studies">Case Studies</a>
+                <a href="../coaching.html">Coaching</a>
+                <a href="../resources.html">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <article>
+        <!-- Blog Header -->
+        <header class="blog-header">
+            <div class="main-container">
+                <a href="../blog.html" class="back-link">← Back to Blog</a>
+                <span class="blog-meta">{{date}} • {{category}}</span>
+                <h1 class="blog-title">{{title}}</h1>
+                <p class="blog-subtitle">{{description}}</p>
+            </div>
+        </header>
+
+        <!-- Main Content (Injected from Markdown) -->
+        <div class="blog-content">
+            {{content}}
+
+            <!-- Simple Author Box -->
+            <div class="author-box">
+                <img src="../ChristopherLynnHeadshot_v2.jpg" alt="Christopher Lynn" class="author-img">
+                <div>
+                    <h4 style="margin-bottom: 0.25rem;">Christopher Lynn</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-color-muted);">Systems Coach for Overwhelmed Leaders.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Specific CTA based on context -->
+            <div class="cta-box"
+                style="margin-top: 3rem; background: var(--background-secondary); padding: 2rem; border-radius: 0.5rem; text-align: center; border: 1px solid var(--border-color);">
+                <h3 style="margin-bottom: 1rem;">Need help implementing this?</h3>
+                <p style="margin-bottom: 1.5rem; color: var(--text-color-muted);">Stop trying to figure it out alone.
+                    Let's build this system for you.</p>
+                <a href="https://tidycal.com/christopherdlynn/strategy-call" target="_blank"
+                    class="cta-button cta-button-primary">Book a Strategy Call</a>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="main-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="../index.html" class="logo"><span class="logo-primary">christopher lynn</span> |
+                        systems</a>
+                    <p class="footer-tagline">Helping leaders move from overwhelm to clarity through robust systems and
+                        focused execution.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../blog.html">Blog</a></li>
+                        <li><a href="../index.html#case-studies">Case Studies</a></li>
+                        <li><a href="../resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://tidycal.com/christopherdlynn/strategy-call" target="_blank">Book Strategy
+                                Call</a></li>
+                        <li><a href="https://christopherlynn.substack.com/" target="_blank">Substack Newsletter</a></li>
+                        <li><a href="mailto:chris@christopherlynn.com">Contact Chris</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Christopher Lynn Systems, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        }
+    </script>
+</body>
+
+</html>

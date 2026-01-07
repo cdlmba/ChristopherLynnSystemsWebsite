@@ -1,8 +1,23 @@
-# 🎉 Stripe Payment Integration - Complete!
+# 🎉 Project Progress Summary
 
-## What You Now Have
+## ✅ Completed in Recent Sessions
 
-I've created a complete Stripe payment integration system for your Christopher Lynn Systems website. Here's what's been set up:
+### 1. 🎨 Visual Polish & Branding
+*   **Typography:** Standardized site-wide fonts to `Montserrat` (Body), `Plus Jakarta Sans` (Headings), and `Public Sans` (Accents) via Google Fonts.
+*   **Hero Image:** Updated main headshot to `ChristopherLynnHeadshot_v2.jpg` (with cache busting) for a fresh professional look.
+*   **Urgency Banner:** Pivoted sitewide banner from "Group Coaching" to "**Strategy Call**" promotion.
+
+### 2. ✍️ Content & Architecture
+*   **Blog Engine:** Implemented a Static Site Generator (SSG) workflow logic.
+    *   **Write:** You write `.md` files in `_posts/` (e.g., Obsidian).
+    *   **Build:** Run `python build_blog.py`.
+    *   **Publish:** Script generates HTML pages in `blog/` and updates the index.
+*   **Coaching Page:** Updated offers to remove expired dates and set Group Coaching to "Waitlist Only".
+
+### 3. 💳 Stripe Payment Integration
+I've created a complete Stripe payment integration system for your Christopher Lynn Systems website.
+... (Rest of the previous summary regarding Stripe Integration) ...
+
 
 ### ✅ Files Created
 

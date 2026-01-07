@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1749Z38SZB"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1749Z38SZB');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Christopher Lynn Systems</title>
+    <link rel="icon" type="image/jpeg" href="ChristopherLynnHeadshot_v2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:wght@400..800&family=Public+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Blog Index Specific Styles */
+        .blog-hero {
+            padding: 4rem 0;
+            text-align: center;
+            background-color: var(--background-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .category-link {
+            color: var(--text-color-muted);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid transparent;
+        }
+
+        .category-link:hover,
+        .category-link.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .blog-card {
+            background-color: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            backdrop-filter: blur(12px);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg), var(--shadow-glow);
+            border-color: var(--primary-color);
+        }
+
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: var(--background-secondary);
+            /* Placeholder color */
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-meta {
+            font-size: 0.8rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text-color-main);
+            line-height: 1.4;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-color-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .blog-card-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .blog-card-link:hover {
+            gap: 0.75rem;
+            /* subtle animation */
+        }
+
+        /* Hero Post (First Item) */
+        .featured-post {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: column;
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid var(--border-color);
+        }
+
+        @media (min-width: 768px) {
+            .featured-post {
+                flex-direction: row;
+                align-items: stretch;
+                min-height: 350px;
+            }
+
+            .featured-post .blog-card-img {
+                width: 50%;
+                height: auto;
+            }
+
+            .featured-post .blog-card-content {
+                width: 50%;
+                padding: 3rem;
+                justify-content: center;
+            }
+
+            .featured-post .blog-card-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="promo-banner">
+        🚀 Ready to stop being the bottleneck? <a href="https://tidycal.com/christopherdlynn/strategy-call"
+            target="_blank">Book a Strategy Call →</a>
+    </div>
+
+    <header class="main-header">
+        <div class="main-container header-content">
+            <a href="index.html" class="logo"><span class="logo-primary">christopher lynn</span> | systems</a>
+            <nav class="main-nav">
+                <a href="about.html">About</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#case-studies">Case Studies</a>
+                <a href="coaching.html">Coaching</a>
+                <a href="resources.html">Resources</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blog Hero / Filter -->
+    <section class="blog-hero">
+        <div class="main-container">
+            <h1 style="margin-bottom: 1rem;">The Systems Blog</h1>
+            <p style="color: var(--text-color-muted); max-width: 600px; margin: 0 auto;">Insights on leadership,
+                burnout, and building systems that scale.</p>
+
+            <div class="category-nav">
+                <a href="#" class="category-link active">All Posts</a>
+                <a href="#" class="category-link">Leadership</a>
+                <a href="#" class="category-link">Systems</a>
+                <a href="#" class="category-link">Burnout</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-padding">
+        <div class="main-container">
+            <!-- POSTS INJECTION POINT -->
+            <div class="blog-grid">
+                
+        <article class="blog-card featured-post">
+            <div class="blog-card-img" style="background-image: url('../images/confident-leader-toolkit.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="blog-card-content">
+                <div class="blog-card-meta">2026-01-06 • Leadership</div>
+                <h2 class="blog-card-title"><a href="blog/welcome.html">Welcome to the New Systems Blog</a></h2>
+                <p class="blog-card-excerpt">Why we are launching this platform for leaders, and what you can expect in the coming weeks.</p>
+                <a href="blog/welcome.html" class="blog-card-link">Read Article →</a>
+            </div>
+        </article>
+        
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="main-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo"><span class="logo-primary">christopher lynn</span> |
+                        systems</a>
+                    <p class="footer-tagline">Helping leaders move from overwhelm to clarity through robust systems and
+                        focused execution.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="index.html#case-studies">Case Studies</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://tidycal.com/christopherdlynn/strategy-call" target="_blank">Book Strategy
+                                Call</a></li>
+                        <li><a href="https://christopherlynn.substack.com/" target="_blank">Substack Newsletter</a></li>
+                        <li><a href="mailto:chris@christopherlynn.com">Contact Chris</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; 2025 Christopher Lynn Systems, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+        }
+    </script>
+</body>
+
+</html>
