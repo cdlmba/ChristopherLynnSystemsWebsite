@@ -193,6 +193,43 @@ a:hover {
     color: var(--primary-color);
 }
 
+.nav-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    color: var(--background-main) !important;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600 !important;
+    transform: translateY(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.nav-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
+    color: var(--background-main) !important;
+}
+
+/* Guarantee Badge */
+.guarantee-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: rgba(45, 212, 191, 0.05);
+    border: 1px solid rgba(45, 212, 191, 0.2);
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.guarantee-badge svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
 /* ----------------------------------- */
 /* 4. Hero Section (Products Focus)    */
 /* ----------------------------------- */
