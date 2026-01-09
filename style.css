@@ -141,7 +141,7 @@ a:hover {
     background-color: transparent;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    position: fixed;
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 1000;
@@ -163,6 +163,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .logo {
@@ -180,6 +181,7 @@ a:hover {
 .main-nav {
     display: flex;
     gap: 1.5rem;
+    align-items: center;
 }
 
 .main-nav a {
@@ -187,6 +189,7 @@ a:hover {
     font-weight: 400;
     font-size: 0.9rem;
     transition: color 0.2s;
+    white-space: nowrap;
 }
 
 .main-nav a:hover {
@@ -201,6 +204,7 @@ a:hover {
     font-weight: 600 !important;
     transform: translateY(0);
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    white-space: nowrap;
 }
 
 .nav-cta:hover {
@@ -235,7 +239,7 @@ a:hover {
 /* ----------------------------------- */
 
 .hero-section {
-    padding-top: 6rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
     border-bottom: 1px solid var(--border-color);
 }
@@ -691,7 +695,7 @@ footer {
 /* 10. Mobile Optimization              */
 /* ----------------------------------- */
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .hero-title {
         font-size: 2.5rem;
     }
