@@ -737,6 +737,12 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .hero-image {
+        max-width: 280px;
+    }
+}
+
 /* ----------------------------------- */
 /* Services Table Styles               */
 /* ----------------------------------- */

@@ -15,7 +15,7 @@ const google = createGoogleGenerativeAI({
 //     apiKey: OPENAI_API_KEY,
 // });
 
-export type AnalysisType = 'Full Analysis' | 'Analyze Skills' | 'ATS Score' | 'Cover Letter';
+export type AnalysisType = 'Full Analysis' | 'Analyze Skills' | 'ATS Score' | 'Cover Letter' | 'Rewrite Resume';
 export type AIProvider = 'gemini' | 'openai';
 
 export const analyzeResume = async (
@@ -41,6 +41,7 @@ export const analyzeResume = async (
 
         const { text } = await generateText({
             model: google('gemini-flash-latest'),
+            system: "You are an expert Executive Career Coach. Your goal is to position candidates for growth and management roles, not just their current level. Focus on leadership, strategy, and ownership. When evaluating skills, if a candidate has used a tool (like SQL) but isn't an expert, frame it as 'Applied Knowledge' or 'Practical Experience' rather than 'Basic'.",
             prompt: prompt,
         });
         return text;
@@ -54,13 +55,70 @@ export const analyzeResume = async (
 const getPrompt = (resumeText: string, jobDescription: string, type: AnalysisType) => {
     switch (type) {
         case 'Full Analysis':
-            return `Analyze the following resume against the job description. Provide a Match Score (0-100), Strengths, Weaknesses, and specific Gap analysis.\n\nResume: ${resumeText}\n\nJob Description: ${jobDescription}`;
+            return `Analyze the following resume against the job description.
+            
+            IMPORTANT: Start your response with a "Verdict" based on the Match Score.
+            - If Match Score > 85: "Veridct: Nice work! Send it!"
+            - If Match Score 70-85: "Verdict: Solid contender, minor tweaks needed."
+            - If Match Score < 70: "Verdict: Could use some more work!"
+
+            Then provide:
+            1. Match Score (0-100)
+            2. Strengths (Highlight leadership/management potential)
+            3. Weaknesses
+            4. Specific Gap Analysis (Be constructive)
+
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
         case 'Analyze Skills':
-            return `Compare the skills in this resume with the skills required in the job description. Categorize into "Matched Skills", "Missing Skills", and "Bonus Skills".\n\nResume: ${resumeText}\n\nJob Description: ${jobDescription}`;
+            return `Compare the skills in this resume with the skills required in the job description. 
+            
+            Categorize into:
+            1. "Matched Skills" 
+            2. "Missing Skills" 
+            3. "Bonus Skills"
+            
+            Constraint: If they have exposure to a technical skill (e.g., SQL, Python) but it's not a primary strengh, label it as "Practical Experience" or "Familiarity" instead of "Basic".
+
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
         case 'ATS Score':
-            return `Evaluate this resume for ATS (Applicant Tracking System) friendliness against this job. Check for keywords match, formatting issues, and provide an ATS optimization score.\n\nResume: ${resumeText}\n\nJob Description: ${jobDescription}`;
+            return `Evaluate this resume for ATS (Applicant Tracking System) friendliness against this job. Check for keywords match, formatting issues, and provide an ATS optimization score.
+            
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
         case 'Cover Letter':
-            return `Write a professional and highly tailored cover letter based on this resume and job description.\n\nResume: ${resumeText}\n\nJob Description: ${jobDescription}`;
+            return `Write a professional, highly tailored cover letter based on this resume and job description.
+            
+            Constraints:
+            - Keep it concise (under 350 words).
+            - Focus on the top 3 aligned achievements.
+            - Use a direct, confident tone (Executive/Managerial voice).
+            - Do not summarize the entire history, just the relevant highlights.
+
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
+        case 'Rewrite Resume':
+            return `Rewrite the professional summary and experience bullets of the provided resume to target the provided job description.
+            
+            Guidelines:
+            - "Pitch High": Frame experience for the next level up (Management/Senior).
+            - Use strong action verbs.
+            - Ensure high keyword density for ATS optimization.
+            - Note: It is okay if this version is slightly longer ensure all keywords are covered; the user can trim it later.
+
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
         default:
             return "";
     }

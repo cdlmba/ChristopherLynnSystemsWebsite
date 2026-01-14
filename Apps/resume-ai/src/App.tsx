@@ -211,6 +211,20 @@ function App() {
           >
             {isAnalyzing === 'Cover Letter' ? 'Analyzing...' : '✉️ Cover Letter'}
           </button>
+          <button
+            className="btn-primary"
+            onClick={() => handleAnalysis('Rewrite Resume')}
+            disabled={!!isAnalyzing}
+            style={{ background: 'linear-gradient(135deg, #ec4899, #be185d)' }}
+          >
+            {isAnalyzing === 'Rewrite Resume' ? 'Rewriting...' : '✨ Rewrite Resume'}
+          </button>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '12px', marginBottom: '20px' }}>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontStyle: 'italic' }}>
+            Note: The "Rewrite" and "Analysis" features may produce longer, detailed content to ensure maximum ATS keyword coverage. You can trim the results to fit your specific needs.
+          </p>
         </div>
 
         {error && (

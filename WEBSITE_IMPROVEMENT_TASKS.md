@@ -24,6 +24,8 @@
 - [x] **Expand Footer**:
     - [x] Add site navigation links.
     - [x] Add a "Contact Us" element.
+- [x] **Mobile Optimization**: Resized hero image on mobile to improve page scroll depth.
+
 
 ## 📈 Conversion & Strategy
 - [x] **Implement Urgency Banner**: Created a prominent sitewide banner pivoted to promote the Strategy Call (replacing the previous Group Coaching text).
