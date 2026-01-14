@@ -251,13 +251,13 @@ a:hover {
     align-items: center;
 }
 
-.hero-content-left {
+.hero-image-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.hero-content-right {
+.hero-text-container {
     width: 100%;
 }
 
@@ -278,14 +278,16 @@ a:hover {
         gap: 4rem;
     }
 
-    .hero-content-left {
+    .hero-image-container {
         flex: 1;
-        padding-right: 2rem;
-        justify-content: flex-start;
+        justify-content: flex-end;
+        /* Align image to the right */
     }
 
-    .hero-content-right {
+    .hero-text-container {
         flex: 1;
+        padding-right: 2rem;
+        /* Add breathing room between text and image */
     }
 }
 
