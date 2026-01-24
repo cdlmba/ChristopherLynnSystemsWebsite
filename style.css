@@ -2047,6 +2047,10 @@ footer {
 /* 20. Founder Gallery (Launchpad)     */
 /* ----------------------------------- */
 
+#launchpad {
+    scroll-margin-top: 100px;
+}
+
 .founder-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
