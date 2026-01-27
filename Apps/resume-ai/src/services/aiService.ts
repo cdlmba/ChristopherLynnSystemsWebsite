@@ -1,22 +1,14 @@
 import { generateText } from 'ai';
 import { createGoogleGenerativeAI } from '@ai-sdk/google';
-// import { createOpenAI } from '@ai-sdk/openai';
+import { AnalysisType, AIProvider } from '../types';
 
 // @ts-ignore
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-// @ts-ignore
-// const OPENAI_API_KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 const google = createGoogleGenerativeAI({
     apiKey: GEMINI_API_KEY,
 });
-
-// const openai = createOpenAI({
-//     apiKey: OPENAI_API_KEY,
-// });
-
-export type AnalysisType = 'Full Analysis' | 'Analyze Skills' | 'ATS Score' | 'Cover Letter' | 'Rewrite Resume';
-export type AIProvider = 'gemini' | 'openai';
+// import { createOpenAI } from '@ai-sdk/openai';
 
 export const analyzeResume = async (
     resumeText: string,
@@ -114,6 +106,20 @@ const getPrompt = (resumeText: string, jobDescription: string, type: AnalysisTyp
             - Use strong action verbs.
             - Ensure high keyword density for ATS optimization.
             - Note: It is okay if this version is slightly longer ensure all keywords are covered; the user can trim it later.
+
+            Resume: ${resumeText}
+            
+            Job Description: ${jobDescription}`;
+
+        case 'Interview Questions':
+            return `Based on the following resume and job description, generate 5-7 challenging interview questions that this specific candidate is likely to face.
+            
+            For each question:
+            1. Provide the Question.
+            2. Explain "Why they are asking this" (the intent).
+            3. Provide a "Pro-Tip for the Answer" based on the candidate's specific background.
+            
+            Focus on leadership, problem-solving, and specific gaps between the resume and the job requirements.
 
             Resume: ${resumeText}
             
